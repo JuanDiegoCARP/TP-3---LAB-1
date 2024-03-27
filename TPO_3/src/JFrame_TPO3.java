@@ -1,3 +1,6 @@
+
+import javax.swing.JOptionPane;
+
 /*
  * To change this license header, choose License Headers in Project Properties.
  * To change this template file, choose Tools | Templates
@@ -149,24 +152,21 @@ public class JFrame_TPO3 extends javax.swing.JFrame {
 
         jLabel3.setFont(new java.awt.Font("Tahoma", 0, 24)); // NOI18N
         jLabel3.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jLabel3.setText("Inicio de session");
+        jLabel3.setText("Inicio de sesion");
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
+                .addGap(10, 10, 10)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jLabel3)
                     .addGroup(layout.createSequentialGroup()
-                        .addGap(10, 10, 10)
-                        .addComponent(jLabel3))
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(10, 10, 10)
                         .addComponent(jLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 89, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(18, 18, 18)
                         .addComponent(JtMail, javax.swing.GroupLayout.PREFERRED_SIZE, 161, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addGroup(layout.createSequentialGroup()
-                        .addGap(10, 10, 10)
                         .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 89, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(18, 18, 18)
                         .addComponent(JPContraseña, javax.swing.GroupLayout.PREFERRED_SIZE, 161, javax.swing.GroupLayout.PREFERRED_SIZE)))
@@ -206,8 +206,14 @@ public class JFrame_TPO3 extends javax.swing.JFrame {
     }//GEN-LAST:event_JtMailActionPerformed
 
     private void JbRegistrarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_JbRegistrarActionPerformed
-        // TODO add your handling code here:
         
+        if(JPContraseña.getText().equals("12345678")&&JtMail.getText().equals("alumno@ulp.edu.ar")){
+         JOptionPane.showMessageDialog(this, "Bienvenido Usuario : "+JtMail.getText());
+        }else{
+            JOptionPane.showMessageDialog(this,"Usuario o Contrasena incorrectos, ingrese nuevamente");
+            JtMail.setText("");
+            JPContraseña.setText("");
+        }
     }//GEN-LAST:event_JbRegistrarActionPerformed
 
     /**
